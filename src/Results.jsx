@@ -17,6 +17,7 @@ const Results = ({ pets }) => {
                                 breed={pet.breed}
                                 images={pet.images}
                                 location={`${pet.city}, ${pet.state}`}
+                                id={pet.id}
                                 key={pet.id}
                                 /* instead of passing all these attributes we can also do:
                                 <Pet {...pet} key={pet.id} /> 
