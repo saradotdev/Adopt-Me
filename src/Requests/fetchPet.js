@@ -1,4 +1,5 @@
 const fetchPet = async ({ queryKey }) => {
+    // a query key uniquely identifies the query
     const id = queryKey[1];
     /* id will the second index of queryKey prop
     see in Details.jsx where we do useQuery(["details", id], fetchPet) */
