@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AdoptedPetContext from "./Context/AdoptedPetContext";
 import SearchParams from "./Pages/SearchParams";
 import Details from "./Pages/Details";
 
@@ -14,18 +16,21 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
+    const adoptedPet = useState(null);
     return (
         <BrowserRouter>
-            <QueryClientProvider client={queryClient}>
-                <header>
-                    <Link to="/">Adopt Me!</Link>
-                </header>
+            <AdoptedPetContext.Provider value={adoptedPet}>
+                <QueryClientProvider client={queryClient}>
+                    <header>
+                        <Link to="/">Adopt Me!</Link>
+                    </header>
 
-                <Routes>
-                    <Route path="/" element={<SearchParams />} />
-                    <Route path="/details/:id" element={<Details />} />
-                </Routes>
-            </QueryClientProvider>
+                    <Routes>
+                        <Route path="/" element={<SearchParams />} />
+                        <Route path="/details/:id" element={<Details />} />
+                    </Routes>
+                </QueryClientProvider>
+            </AdoptedPetContext.Provider>
         </BrowserRouter>
     );
 };
