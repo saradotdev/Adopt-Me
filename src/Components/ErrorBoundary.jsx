@@ -11,7 +11,7 @@ class ErrorBoundary extends Component {
     }
 
     componentDidCatch(error, info) {
-        // Typically you would log this to TrackJS or New Relic (error tracking softwares)
+        // Typically you would log this to TrackJS or New Relic (Error Tracking Softwares)
         console.error("ErrorBoundary component caught an error", error, info);
     }
 
