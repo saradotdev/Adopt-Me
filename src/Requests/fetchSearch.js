@@ -1,11 +1,13 @@
 async function fetchSearch({ queryKey }) {
-    const { animal, location, breed } = queryKey[1]; // can pass an object too as a queryKey
+    const { animal, location, breed, page } = queryKey[1]; // can pass an object too as a queryKey
     const response = await fetch(
-        `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+        `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}&page=${page}`
     );
 
     if (!response.ok) {
-        throw new Error(`${animal}, ${location}, ${breed} fetch not ok`);
+        throw new Error(
+            `${animal}, ${location}, ${breed}, ${page} fetch not ok`
+        );
     }
 
     return response.json();

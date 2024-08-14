@@ -230,6 +230,22 @@ header {
     border: 1px solid cornflowerblue;
 }
 
+.pagination {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+
+.pagination > .page-button {
+    margin: 2px;
+    padding: 10px;
+}
+
+.pagination > .active {
+    background-color: #122622;
+}
+
 #modal {
     background-color: rgba(0, 0, 0, 0.9);
     position: fixed;

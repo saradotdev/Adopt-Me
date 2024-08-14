@@ -6,9 +6,11 @@ import fetchSearch from "../Requests/fetchSearch";
 import Results from "../Components/Results";
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+const itemsPerPage = 10;
 
 const SearchParams = () => {
     const [adoptedPet] = useContext(AdoptedPetContext);
+    const [page, setPage] = useState(0);
     const [animal, setAnimal] = useState("");
     const [breeds] = useBreedList(animal);
     const [requestParams, setRequestParams] = useState({
@@ -17,8 +19,17 @@ const SearchParams = () => {
         location: "",
     });
 
-    const results = useQuery(["search", requestParams], fetchSearch); // the queryKey takes the object
+    const results = useQuery(
+        ["search", { ...requestParams, page }],
+        fetchSearch
+    ); // the queryKey takes the object
     const pets = results?.data?.pets ?? [];
+
+    const totalPages = Math.ceil(results?.data?.numberOfResults / itemsPerPage);
+
+    function handlePageChange(newPage) {
+        setPage(newPage);
+    }
 
     return (
         <div className="search-params">
@@ -87,6 +98,36 @@ const SearchParams = () => {
             </form>
 
             <Results pets={pets} />
+
+            <div className="pagination">
+                <button
+                    onClick={() => handlePageChange(page - 1)}
+                    disabled={page === 0}
+                    className="page-button"
+                >
+                    Previous
+                </button>
+                {totalPages
+                    ? [...Array(totalPages).keys()].map((_, index) => (
+                          <button
+                              key={index + 1}
+                              onClick={() => handlePageChange(index)}
+                              className={`page-button ${
+                                  page === index ? "active" : ""
+                              }`}
+                          >
+                              {index + 1}
+                          </button>
+                      ))
+                    : null}
+                <button
+                    onClick={() => handlePageChange(page + 1)}
+                    disabled={page === totalPages - 1}
+                    className="page-button"
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
 };
