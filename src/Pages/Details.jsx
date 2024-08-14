@@ -13,7 +13,7 @@ const Details = () => {
     const [showModal, setShowModal] = useState(false);
     const { id } = useParams();
     const results = useQuery(["details", id], fetchPet);
-    /* React Query searches for details of the id in its cache, and if it doesn't find them, it runs the fetchPet function. details and id are passed as queryKey to fetchPet */
+    /* React-Query searches for details of the id in its cache, and if it doesn't find them, it runs the fetchPet function. details and id are passed as queryKey to fetchPet */
 
     if (results.isLoading) {
         return (
