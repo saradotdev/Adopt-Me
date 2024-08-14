@@ -4,7 +4,7 @@ async function fetchBreedList({ queryKey }) {
     if (!animal) return []; // if there's no animal, return an empty array
 
     const response = await fetch(
-        `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
+        `https://pets-v2.dev-apis.com/breeds?animal=${animal}`
     );
 
     if (!response.ok) {
