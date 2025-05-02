@@ -16,7 +16,7 @@
 - **Styling:** CSS
 - **State Management:** React Context / useState
 - **Routing:** React Router DOM
-- **API:** Fetching live pet data from the open API at 🔗 [https://pets-v2.dev-apis.com](https://pets-v2.dev-apis.com) used in the *Frontend Masters - Intermediate React* course.
+- **API:** Fetching live pet data from the open API at 🔗 [https://pets-v2.dev-apis.com](https://pets-v2.dev-apis.com/pets) used in the *Frontend Masters - Intermediate React* course.
 
 ---
 
@@ -54,6 +54,8 @@ http://localhost:5173
 ---
 
 ## 📸 UI Preview
+
+🌐 **Live Site:** [https://browse-and-adopt-me.vercel.app/](https://browse-and-adopt-me.vercel.app/)
 
 ### 🏠 Home Page
 ![Home](./screenshots/home.png)
