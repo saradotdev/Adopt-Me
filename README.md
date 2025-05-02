@@ -16,9 +16,7 @@
 - **Styling:** CSS
 - **State Management:** React Context / useState
 - **Routing:** React Router DOM
-- **API:** This app fetches live pet data from the open API at  
-🔗 [https://pets-v2.dev-apis.com](https://pets-v2.dev-apis.com)  
-used in the *Frontend Masters - Intermediate React* course.
+- **API:** Fetching live pet data from the open API at 🔗 [https://pets-v2.dev-apis.com](https://pets-v2.dev-apis.com) used in the *Frontend Masters - Intermediate React* course.
 
 ---
 
@@ -65,15 +63,4 @@ http://localhost:5173
 
 ---
 
-## 📬 Contact
-
-Feel free to connect for feedback, suggestions, or contributions:
-
-- GitHub: [@saradotdev](https://github.com/saradotdev)
-
----
-
 🐾 **Find your new best friend today with Adopt Me!**
-```
-
----
